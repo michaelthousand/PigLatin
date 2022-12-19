@@ -1,5 +1,3 @@
-# Module 7 - Text Conversion Program
-
 # Set all variables including a list of the vowels to check against
 user_input = ""
 vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"]
@@ -10,6 +8,8 @@ yay = "yay"
 def to_pig_latin(sentence):
     words = sentence.split()
     pig_latin_words = []
+
+    # Checks if the word starts with a consonant or vowel and then applies Pig Latin rules
     for word in words:
         if word[0] in vowels:
             pig_latin_words.append(word + yay)
@@ -19,7 +19,8 @@ def to_pig_latin(sentence):
             pig_latin_words.append(word[2:] + word[:2] + ay)
         elif word[3] in vowels:
             pig_latin_words.append(word[3:] + word[:3] + ay)
-        # Could continue but sensing there's probably an easier way to make this ladder I don't know yet
+        
+    # Rejoins the words into a sentence
     return " ".join(pig_latin_words) 
 
 
